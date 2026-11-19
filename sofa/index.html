@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Control Móvil - Desde el Sofá</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="play.css">
+  <script src="mqttws31.min.js"></script>
+</head>
+<body class="mobile-body">
+
+  <!-- SCREEN 1: JOIN FORM -->
+  <main id="mobileJoinScreen" class="mobile-screen active">
+    <div class="mobile-card">
+      <div class="mobile-brand">
+        <span class="brand-flag">🇨🇴</span>
+        <h1 class="brand-title">Desde el Sofá</h1>
+      </div>
+      <p class="brand-sub">¡Conéctate para jugar con tu familia!</p>
+
+      <form id="joinForm">
+        <div class="input-group">
+          <label for="roomCodeInput">Código de Sala (En la TV):</label>
+          <input type="text" id="roomCodeInput" maxlength="6" placeholder="EJ: SOFA" required autofocus autocomplete="off" autocapitalize="characters">
+        </div>
+
+        <div class="input-group">
+          <label for="playerNameInput">Tu Nombre o Apodo:</label>
+          <input type="text" id="playerNameInput" maxlength="15" placeholder="Ej: Pipe, Tía Gloria, Mamá..." required autocomplete="off">
+        </div>
+
+        <div class="input-group">
+          <label>Elige tu Avatar Colombiano:</label>
+          <div class="avatar-picker" id="avatarPicker">
+            <button type="button" class="avatar-btn selected" data-avatar="🇨🇴">🇨🇴</button>
+            <button type="button" class="avatar-btn" data-avatar="☕">☕</button>
+            <button type="button" class="avatar-btn" data-avatar="🫓">🫓</button>
+            <button type="button" class="avatar-btn" data-avatar="🦜">🦜</button>
+            <button type="button" class="avatar-btn" data-avatar="🐆">🐆</button>
+            <button type="button" class="avatar-btn" data-avatar="🤠">🤠</button>
+            <button type="button" class="avatar-btn" data-avatar="🦥">🦥</button>
+            <button type="button" class="avatar-btn" data-avatar="🌺">🌺</button>
+            <button type="button" class="avatar-btn" data-avatar="🚌">🚌</button>
+            <button type="button" class="avatar-btn" data-avatar="🏔️">🏔️</button>
+          </div>
+        </div>
+
+        <div id="joinErrorMessage" class="error-msg"></div>
+
+        <button type="submit" id="btnJoin" class="btn-mobile-submit">
+          ¡Entrar a la Sala!
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <!-- SCREEN 2: WAITING IN LOBBY -->
+  <main id="mobileWaitingScreen" class="mobile-screen">
+    <div class="status-card">
+      <div class="player-badge">
+        <span class="user-avatar" id="myDisplayAvatar">🇨🇴</span>
+        <h2 class="user-name" id="myDisplayName">Jugador</h2>
+      </div>
+      <div class="pulse-circle">🛋️</div>
+      <h3 class="status-title">¡Estás en el Sofá!</h3>
+      <p class="status-desc">Mira la pantalla del televisor mientras los demás familiares se unen.</p>
+    </div>
+  </main>
+
+  <!-- SCREEN 3: GAMEPAD / ANSWER BUTTONS -->
+  <main id="mobileGamepadScreen" class="mobile-screen">
+    <div class="gamepad-header">
+      <div class="mini-score">Puntos: <strong id="myScore">0</strong></div>
+      <div class="mini-streak" id="myStreak">🔥 x1</div>
+    </div>
+
+    <div class="gamepad-question" id="mobileQuestionTitle">
+      ¿Pregunta?
+    </div>
+
+    <div class="mobile-buttons-grid">
+      <button class="pad-btn pad-0" data-idx="0">
+        <span class="pad-shape">▲</span>
+        <span class="pad-text" id="mOptText0">Opción A</span>
+      </button>
+
+      <button class="pad-btn pad-1" data-idx="1">
+        <span class="pad-shape">◆</span>
+        <span class="pad-text" id="mOptText1">Opción B</span>
+      </button>
+
+      <button class="pad-btn pad-2" data-idx="2">
+        <span class="pad-shape">●</span>
+        <span class="pad-text" id="mOptText2">Opción C</span>
+      </button>
+
+      <button class="pad-btn pad-3" data-idx="3">
+        <span class="pad-shape">■</span>
+        <span class="pad-text" id="mOptText3">Opción D</span>
+      </button>
+    </div>
+  </main>
+
+  <!-- SCREEN 4: ANSWER SUBMITTED (WAITING FOR TIMER) -->
+  <main id="mobileSubmittedScreen" class="mobile-screen">
+    <div class="status-card">
+      <div class="spinner-icon">⏳</div>
+      <h2 class="status-title">¡Respuesta Enviada!</h2>
+      <p class="status-desc">Observa el televisor para ver la respuesta correcta y el dato curioso.</p>
+    </div>
+  </main>
+
+  <!-- SCREEN 5: ANSWER RESULT FEEDBACK -->
+  <main id="mobileResultScreen" class="mobile-screen">
+    <div class="result-card" id="resultCard">
+      <div class="result-icon" id="resultIcon">🎉</div>
+      <h2 class="result-title" id="resultTitle">¡Correcto!</h2>
+      <p class="result-points" id="resultPoints">+950 pts</p>
+      <div class="result-total">Puntaje Total: <strong id="resultTotalScore">950</strong></div>
+    </div>
+  </main>
+
+  <!-- SCREEN 6: GAME OVER -->
+  <main id="mobileGameOverScreen" class="mobile-screen">
+    <div class="status-card">
+      <div class="result-icon">🏆</div>
+      <h2 class="status-title">¡Juego Terminado!</h2>
+      <p class="status-desc">¡Mira la pantalla de la TV para ver el podio de campeones!</p>
+      <div class="final-score-pill">
+        Puntaje Final: <strong id="finalScoreVal">0</strong> pts
+      </div>
+    </div>
+  </main>
+
+  <script src="play.js"></script>
+</body>
+</html>
