@@ -1,0 +1,119 @@
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="DistributorSignature">
+<SignedInfo>
+<CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></CanonicalizationMethod>
+<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"></SignatureMethod>
+<Reference URI="author-signature.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
+<DigestValue>OBXgcP8tFtpXyuZAoO94I1dVCZ2BFn3gv0s3lhStM8MZNgc1eakjusPRtHG1OaIHZIJ41yUekRe/
+PQqzHW3q/Q==</DigestValue>
+</Reference>
+<Reference URI="config.xml">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
+<DigestValue>zO2IF1XoAEb2cMqj8+amPMRVS4XJC4yz2j1J6iPEq+4bE15X9ykBo0BpdTbHwPfZvGeUVSsimIh8
+ZunC6wZYVQ==</DigestValue>
+</Reference>
+<Reference URI="css%2Fstyle.css">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
+<DigestValue>AHYaYyWCFpyIo2vEk/wQbHlBlwpZ+WWV7dc1J1EBwMmXf3nBK8q4dJ+9sXkwP2sMsSAb34Q6NZyZ
+bBnETUPaWA==</DigestValue>
+</Reference>
+<Reference URI="icon.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
+<DigestValue>yPozinex9pyMvD1jmxSDxUBu6PY09UzXnzYDL2tY8Ox56DP8hHYDtm+3tk5RW+9yjoXzKWpbFKPL
+5yO8WslPBA==</DigestValue>
+</Reference>
+<Reference URI="icon_juris_panel.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
+<DigestValue>lqw06FEe4A0yO1DSOjgC3WEII0ofGwqNoyXcdosdonrnSn7KyEGGgqQ/DmwD6wFbWktgVKO0uUKd
+QfP00rJxPQ==</DigestValue>
+</Reference>
+<Reference URI="index.html">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
+<DigestValue>OIHuDNNQl/VSHhwLPGWYoVL8nhKAoeDBf9EpxVB0cfk6A9WP0W73m55rU1fGmI4NdzNPvk3ucS7G
+5IT2pyJ00g==</DigestValue>
+</Reference>
+<Reference URI="js%2Fcgp_data.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
+<DigestValue>v6GL19JlhZMVeC/YLFIZ52wRG+dLyRZi7yY5w/q+dtOXa15zqo2XkWVIOjm4gHsZ4ILmiZ9bUWXd
++Pft7E9GkA==</DigestValue>
+</Reference>
+<Reference URI="js%2Fjuristv_data.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
+<DigestValue>v6GL19JlhZMVeC/YLFIZ52wRG+dLyRZi7yY5w/q+dtOXa15zqo2XkWVIOjm4gHsZ4ILmiZ9bUWXd
++Pft7E9GkA==</DigestValue>
+</Reference>
+<Reference URI="js%2Fmain.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
+<DigestValue>nl3/So2u3XMjygrahrsy0O+S4O/4Der8ut8417sRfdCiLgIgLIPhA2OIVf7xCfzj+C1G87IAaYm+
+O0ccHgpnLQ==</DigestValue>
+</Reference>
+<Reference URI="#prop">
+<Transforms>
+<Transform Algorithm="http://www.w3.org/2006/12/xml-c14n11"></Transform>
+</Transforms>
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
+<DigestValue>/r5npk2VVA46QFJnejgONBEh4BWtjrtu9x/IFeLksjWyGmB/cMWKSJWQl7aU3YRQRZ3AesG8gF7q
+GyvKX9Snig==</DigestValue>
+</Reference>
+</SignedInfo>
+<SignatureValue>
+Ld1GV3D1SBspETTooNZR1rPo373jkRivJxj6HH6vOFginUaX0kfROlMiScXaFyQpAEE/P70TEcDt
+HA/GwDNXZI498rCpogYUSzhkfl7eWGYJyGDwvm3crH6PFdUf3vEllc5IhMOEEF24g1rpWvUIoisH
+nKTFjV/Xyt4YStjqOVzSei2zv/ZO5PYRDmy5ARuRYcco3GwMiU3GFVsS8FDqsIWOt9KvL18UtWrP
+PCZSSSA8fGKLgnRHX2xtVSFCi+l8j9lpVTPVT8V/lRLVWfQxGoviOkwWY1Hbh4dNhVgrpy30VkEL
++mcfEZtgPtIFA4lEABglRAtMmUvM/R3Sf4eoVw==
+</SignatureValue>
+<KeyInfo>
+<X509Data>
+<X509Certificate>
+MIIExDCCAqygAwIBAgIIJVku2gEn8g0wDQYJKoZIhvcNAQELBQAwgY8xCzAJBgNVBAYTAktSMRQw
+EgYDVQQIDAtTb3V0aCBLb3JlYTEOMAwGA1UEBwwFU3V3b24xJjAkBgNVBAoMHVNhbXN1bmcgRWxl
+Y3Ryb25pY3MgQ28uLCBMdGQuMQswCQYDVQQLDAJWRDElMCMGA1UEAwwcVkQgREVWRUxPUEVSIFB1
+YmxpYyBDQSBDbGFzczAeFw0yNjExMTgxOTA4MzhaFw0yNzExMTgxOTA4MzhaMG0xETAPBgNVBAMM
+CFRpemVuU0RLMQkwBwYDVQQLDAAxCTAHBgNVBAoMADEJMAcGA1UEBwwAMQkwBwYDVQQIDAAxCTAH
+BgNVBAYTADEhMB8GCSqGSIb3DQEJARYSb3NjYXJqaW1AZ21haWwuY29tMIIBIjANBgkqhkiG9w0B
+AQEFAAOCAQ8AMIIBCgKCAQEAk4jELiffRCAj+ltUa/3+jTFJ1RJ6wuygaLVViI2K4G62pL9OGiqM
+NTHfPdjLLsGAy2h2y35Onh+bcZ0iZsAWLF0ierK+hVm3oc+r3+oL0Z2iIFIKIuoZjryXjSsaCE7D
+9XqsRf0rOhR4JKCJ6X/3CZpZtukbqEVhKYqyjUR3VO3PCqJv3nKNb5fk2D0D6Pphft9zH6Fvigba
+16Xnp6RfovCEZeAnBa4zz2clhdDukMvmUJ8gNUUEqq1a5LOvrYu/HrnJRQ+BbiS3CtbAGJcZtqMx
+neNTQzDq4fcUDtdc+PKapHUQwSBUvnleH291s9wvL5ZGl0Jak5CubFy1aHwu/wIDAQABo0UwQzBB
+BgNVHREEOjA4hhRVUk46dGl6ZW46cGFja2FnZWlkPYYgVVJOOnRpemVuOmRldmljZWlkPVhUQ1BM
+Uk9QRVRVNkMwDQYJKoZIhvcNAQELBQADggIBAB3fRaqdPdTLmR3XvfvHBouWkF9GlJKsznzQTJ7+
+nBGsngn2kYDmVAwXTgSIG6Yus+f4M9ASwEBI9urmDt0wZW+ZjnqZXTcwyiZ3gptwPB5fr9WQtAsI
+j08W/aHIWxd9bBvuY97SAytYVygHgfl6qtov0eGJMlceXMQA2aaDTbIt+gFPKxcJLc0FMaxtYLaN
+I5hzSHoNfsuaeRxg7FFrasP1ZyCwuLId3OhKjPrQuneGZXADY8XNtPJgEFDHq8ZK8wnkqCAIZeSa
+E/TqedT3VUtCVKuj8TGZAdbEpsmnBl79rUP56W1Y+gXAg01zgcQV49NG8TEMzlGtArJfUF9NK11L
+Vb9tI46XJBj8gSd/ZytGUdj3KWveuCqUSd7H0IYV5yERvjFowrvibTZkD9oVo3xyJZxI6HhHzcth
+2jflZoulvvWXakh0/y5Om1hIyEgQvdBdTXpDhfhBv0QYIOXWqCmv0kjmyYbKJbaA0/xsAs/+dZIG
+pfFzyVNL1BRrQ0qXMd8uz47I/SHuVToT9R5kpa58Fod3YBPHu7oM/vZj4KJeUctI2WkjHs4Gyezz
+aNjoMh+GUvEgMxFvNFrKWQZG5W7XqvQwXeHSyutExFC4XMMnv6rcgPcXKnMucmPEfBZCtKiO5eYP
+z6w0BaiGlCNg6syqFDgTuGRnJeWKZyEY5Htp
+</X509Certificate>
+<X509Certificate>
+MIIEvDCCA6SgAwIBAgIQEFcJZvLWjnZy2s9RsDWhmTANBgkqhkiG9w0BAQ0FADCBkTELMAkGA1UE
+BhMCS1IxFDASBgNVBAgMC1NvdXRoIEtvcmVhMQ4wDAYDVQQHDAVTdXdvbjEmMCQGA1UECgwdU2Ft
+c3VuZyBFbGVjdHJvbmljcyBDby4sIEx0ZC4xCzAJBgNVBAsMAlZEMScwJQYDVQQDDB5WRCBERVZF
+TE9QRVIgUHVibGljIFJvb3QgQ2xhc3MwHhcNMjUwNjE3MTAyMDEyWhcNMjkwNjE2MjEwMDAwWjCB
+jzELMAkGA1UEBhMCS1IxFDASBgNVBAgMC1NvdXRoIEtvcmVhMQ4wDAYDVQQHDAVTdXdvbjEmMCQG
+A1UECgwdU2Ftc3VuZyBFbGVjdHJvbmljcyBDby4sIEx0ZC4xCzAJBgNVBAsMAlZEMSUwIwYDVQQD
+DBxWRCBERVZFTE9QRVIgUHVibGljIENBIENsYXNzMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIIC
+CgKCAgEAymA8xOpycAu11WBrw4n2+mIdXfA9jzgEI3wYdn7o2o4H5o22jihR8aEpsrhW+GTgi+90
+GxUGwO+o/Nwp5IFp2alNyunF251uVmsj1WtHBdWy31ex811H6dR0EfJeK5Ksb0XoOLbQP0+K6UM6
+ojXpYk1Q0aWBoIYDImgu4zsB75Q30KGVlYqvvUtr0KVNao9LhPLWda3hqe2qwFZSwd1d9N+hHO6x
+PrtnjO2cx63kPeWJ3GLmO/0phb+UdMQcGJ2KBpApb/WhN+uDjucvAOwbMFOU3NymS7BWZzS6/Rca
+8WEJkY0XBGndUaniYiqOUisQ5aP8I5HIP9EoM/wtk/ldy1CVckX1DyI1o/ZUQWPXzPsb0/cmKOB1
+N33CFvejvsrJDipIMUW8TgB5qw/WHbiOlyxPDc+G8LjJ2ww1wFw9dGVIYpAslcXGyk7r0gHW939m
+JhUIwP9xZYwGdPKSgjHgjAZrWWrE4D1KqEayHVLRhLdhYisHPuqmtuEdbXg32yxCeONdSEz0Z7I2
+CYn9RKIwBzkuWGjwtCyrvocp0AKANve64h0AV1ttlt4hwLbbnLrFtlF1RMFv6mcnz8pg6sLHLcKo
+qVJ50X9ZvMCCj22rlO0FUZ36M1CiV9HJIxH/WoPjftHHuwF+CuJv2kNZuwjTB8dtYpg5PK2sEimB
+4oJomS8CAwEAAaMQMA4wDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQ0FAAOCAQEADtwJOvOAbqqg
+iLzR9cD6HQ2Fofjcoyj69XjduhL5syzx82ASu2GeZDYOApG9Uwmb1w1hXl/UHUFHp0Ob/6SV2wXJ
+TZbBMQlOaYEYwB1crToTfSMTJ5t6LuR+mRQvdBHLFM94fRQjQz3ZZOtMsq2WvcWN7ZEUDK1KMh+R
+P5e7z1GlHCJ00lGqNMrqVf0AMRm3iYfT+46/+CL3IY3iWbn2g3e8mPr0U4ZBpAdWawfHRX21oTCU
+3b5rJ/s1G7dcvkqkvu74HrY4f0dpiRCctgdcVuQnWOPFIlLJEkYOiQV1c5Ro/cWUMCo0oR4icvHX
+b4dPFy+35NUwLfcmza3lFdLgrQ==
+</X509Certificate>
+</X509Data>
+</KeyInfo>
+<Object Id="prop"><SignatureProperties xmlns:dsp="http://www.w3.org/2009/xmldsig-properties"><SignatureProperty Id="profile" Target="#DistributorSignature"><dsp:Profile URI="http://www.w3.org/ns/widgets-digsig#profile"></dsp:Profile></SignatureProperty><SignatureProperty Id="role" Target="#DistributorSignature"><dsp:Role URI="http://www.w3.org/ns/widgets-digsig#role-distributor"></dsp:Role></SignatureProperty><SignatureProperty Id="identifier" Target="#DistributorSignature"><dsp:Identifier></dsp:Identifier></SignatureProperty></SignatureProperties></Object>
+</Signature>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080, user-scalable=no">
+    <title>JurisTV - Biblioteca Jurídica</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tema-oscuro modo-documento">
+    <!-- PANTALLA DE INICIO: MOSAICO DE NORMAS -->
+    <section id="vista-inicio" class="vista activa">
+        <header class="inicio-header">
+            <div class="brand-title">
+                <img src="icon.png" alt="JurisTV" class="brand-logo">
+                <div>
+                    <h1>JurisTV</h1>
+                    <p>LECTOR NORMATIVO • Selecciona una norma para estudiar</p>
+                </div>
+            </div>
+            <div class="header-acciones">
+                <button id="btn-config-inicio" type="button" class="btn-accion" tabindex="0">
+                    ⚙ Configuración
+                </button>
+            </div>
+        </header>
+
+        <div class="seccion-subtitulo">
+            <h2>Códigos y Normas Disponibles</h2>
+        </div>
+
+        <main id="grid-normas" tabindex="0" aria-label="Normas disponibles"></main>
+
+        <footer class="inicio-footer">
+            <div class="guia-control">
+                <span class="dpad-ring" aria-hidden="true">
+                    <span class="dpad-up">▲</span>
+                    <span class="dpad-mid">◄ <span class="dpad-center">●</span> ►</span>
+                    <span class="dpad-down">▼</span>
+                </span>
+                <span>Navegar y elegir norma</span>
+            </div>
+            <div class="guia-control">
+                <span class="tecla-pill">OK</span>
+                <span>Abrir norma</span>
+            </div>
+            <div class="guia-control">
+                <span class="tecla-pill">0-9</span>
+                <span>Ir directo a artículo</span>
+            </div>
+        </footer>
+    </section>
+
+    <!-- VISTA DEL LECTOR DE NORMA -->
+    <section id="vista-lector" class="vista">
+        <div id="app">
+            <!-- Menú lateral izquierdo: visible solo en modo-documento -->
+            <aside id="sidebar">
+                <div class="sidebar-top">
+                    <button id="btn-volver-inicio" type="button" class="btn-secundario" tabindex="0">
+                        ← Normas
+                    </button>
+                    <button id="btn-config-lector" type="button" class="btn-secundario" tabindex="0">
+                        ⚙ Ajustes
+                    </button>
+                    <span id="num-buffer" class="num-pill">---</span>
+                </div>
+
+                <div class="norma-activa-info">
+                    <small>Norma activa</small>
+                    <h2 id="norma-titulo">Código General del Proceso</h2>
+                </div>
+
+                <div class="quick-bar">
+                    <span>0-9: Ir a Art.</span>
+                    <span>Vista: <strong id="modo-label">Documento</strong></span>
+                    <span>Letra: <strong id="font-label">Normal</strong></span>
+                </div>
+
+                <ul id="lista-articulos" tabindex="0" aria-label="Índice de artículos"></ul>
+
+                <footer class="sidebar-footer">
+                    <span><span class="dpad-mini">◉</span> ▲▼◄► Navegar</span>
+                    <span>OK: Letra</span>
+                    <span>RETURN: Normas</span>
+                </footer>
+            </aside>
+
+            <main id="lector" tabindex="0">
+                <!-- Barra superior para modos sin menú lateral (Diapositiva y Panorámico) -->
+                <div id="barra-superior-lector" class="topbar-lector">
+                    <div class="topbar-grupo">
+                        <button id="btn-volver-inicio-top" type="button" class="btn-secundario" tabindex="0">
+                            ← Normas
+                        </button>
+                        <div class="topbar-norma">
+                            <span id="topbar-norma-nombre">Código General del Proceso</span>
+                            <small id="topbar-modo-badge">Modo Diapositiva</small>
+                        </div>
+                    </div>
+
+                    <div class="topbar-grupo">
+                        <button id="btn-top-anterior" type="button" class="btn-secundario" tabindex="0">◄</button>
+                        <span id="topbar-indice-art" class="topbar-contador">Art. 1</span>
+                        <button id="btn-top-siguiente" type="button" class="btn-secundario" tabindex="0">►</button>
+                        <span id="num-buffer-top" class="num-pill">---</span>
+                        <button id="btn-config-lector-top" type="button" class="btn-secundario" tabindex="0">
+                            ⚙ Ajustes
+                        </button>
+                    </div>
+                </div>
+
+                <div id="contenedor-lectura">
+                    <header id="lector-header">
+                        <div class="meta-row">
+                            <span id="articulo-ruta">Ley 1564 de 2012</span>
+                            <span id="estado-fuente" class="badge-norma">Norma Oficial</span>
+                        </div>
+                        <h2 id="articulo-titulo">Cargando artículo...</h2>
+                    </header>
+
+                    <section id="lector-body">
+                        <article id="articulo-contenido"></article>
+                    </section>
+
+                    <!-- Controles exclusivos de tipo diapositiva -->
+                    <div id="controles-diapositiva" class="diapositiva-nav">
+                        <button id="btn-art-anterior" type="button" class="btn-secundario" tabindex="0">
+                            ◄ Parte / Art. anterior
+                        </button>
+                        <span id="indicador-diapositiva">Artículo 1 de 1</span>
+                        <button id="btn-art-siguiente" type="button" class="btn-secundario" tabindex="0">
+                            Parte / Art. siguiente ►
+                        </button>
+                    </div>
+
+                    <!-- Pie rápido exclusivo del modo panorámico -->
+                    <div id="barra-panoramica" class="panoramica-bar">
+                        <span><span class="dpad-mini">◉</span> ◄ ► Cambiar artículo • ▲ ▼ Desplazar texto</span>
+                        <span>0-9: Ir a Art. • RETURN: Normas</span>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <!-- MODAL DE CONFIGURACIÓN GENERAL -->
+    <div id="modal-config" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="titulo-config">
+        <div class="modal-panel">
+            <header class="modal-header">
+                <div>
+                    <small>Preferencias persistentes en TV</small>
+                    <h2 id="titulo-config">Configuración General</h2>
+                </div>
+                <button id="btn-cerrar-config" type="button" class="btn-primario" tabindex="0">
+                    Guardar y cerrar
+                </button>
+            </header>
+
+            <div class="config-grid">
+                <div class="config-bloque">
+                    <h3>Color de fondo y contraste de texto</h3>
+                    <p class="config-desc">Al cambiar el fondo, el texto, bordes y tarjetas se ajustan automáticamente.</p>
+                    <div class="opciones-grupo" id="grupo-tema">
+                        <button type="button" class="opcion-btn" data-tema="tema-oscuro" tabindex="0">
+                            <span class="muestra muestra-oscuro">Aa</span>
+                            <span>Oscuro Profundo</span>
+                        </button>
+                        <button type="button" class="opcion-btn" data-tema="tema-sepia" tabindex="0">
+                            <span class="muestra muestra-sepia">Aa</span>
+                            <span>Papel Sepia</span>
+                        </button>
+                        <button type="button" class="opcion-btn" data-tema="tema-claro" tabindex="0">
+                            <span class="muestra muestra-claro">Aa</span>
+                            <span>Luz Día (Claro)</span>
+                        </button>
+                        <button type="button" class="opcion-btn" data-tema="tema-azul" tabindex="0">
+                            <span class="muestra muestra-azul">Aa</span>
+                            <span>Azul Jurídico</span>
+                        </button>
+                        <button type="button" class="opcion-btn" data-tema="tema-contraste" tabindex="0">
+                            <span class="muestra muestra-contraste">Aa</span>
+                            <span>Alto Contraste</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="config-bloque">
+                    <h3>Tamaño de texto</h3>
+                    <p class="config-desc">Ajusta la escala tipográfica para leer cómodamente desde el televisor.</p>
+                    <div class="opciones-grupo" id="grupo-tamano">
+                        <button type="button" class="opcion-btn" data-tamano="28px" data-etiqueta="Pequeño" tabindex="0">Pequeño (28px)</button>
+                        <button type="button" class="opcion-btn" data-tamano="32px" data-etiqueta="Normal" tabindex="0">Normal (32px)</button>
+                        <button type="button" class="opcion-btn" data-tamano="38px" data-etiqueta="Grande" tabindex="0">Grande (38px)</button>
+                        <button type="button" class="opcion-btn" data-tamano="44px" data-etiqueta="Extra Grande" tabindex="0">Extra Grande (44px)</button>
+                    </div>
+                </div>
+
+                <div class="config-bloque config-ancho-completo">
+                    <h3>Forma de mostrar cada artículo</h3>
+                    <p class="config-desc">Cada modo cambia la estructura de pantalla: con menú lateral, diapositiva a pantalla completa o vista panorámica.</p>
+                    <div class="opciones-grupo" id="grupo-modo">
+                        <button type="button" class="opcion-btn" data-modo="modo-documento" data-etiqueta="Documento" tabindex="0">
+                            <strong>Documento con menú</strong>
+                            <small>Mantiene el menú lateral izquierdo con índice de artículos y lector amplio.</small>
+                        </button>
+                        <button type="button" class="opcion-btn" data-modo="modo-diapositiva" data-etiqueta="Diapositiva" tabindex="0">
+                            <strong>Tipo diapositiva (sin menú)</strong>
+                            <small>Sin menú ni recuadro: pantalla completa mostrando parte por parte sin scroll.</small>
+                        </button>
+                        <button type="button" class="opcion-btn" data-modo="modo-panoramico" data-etiqueta="Panorámico" tabindex="0">
+                            <strong>Vista panorámica (sin menú)</strong>
+                            <small>Sin menú lateral: barra superior compacta y columna ancha de lectura continua.</small>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/cgp_data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
